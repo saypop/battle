@@ -44,7 +44,7 @@
 24. Add this `<input type="text" name="player_1_name">`
 25. Work through rspec errors
 26. Set action in for to go to /names using post method
-27. Create a `post '/names'` in app
+27. Create a `_post_ '/names'` in app
 28. Pass params to instance variables like this `@player_1_name = params[:player_1_name]`
 29. Call `erb(;play)`
 30. Refactor html to include labels on forms.
@@ -54,10 +54,12 @@
 34. Write a get '/play' that renders play
 35. Extract instance variables
 36. Remove erb(:play) from post '/names' and replace it with a redirect to '/play'
-37. commit
+37. Commit
 38. Satisfy second user story
 39. Commit
 40. Create a file called web_helpers.rb in spec
-41. require it in spec helper
-42. create a method in there and use it in your specs
-43. commit
+41. Require it in spec helper
+42. Create a method in there and use it in your specs
+43. Commit
+44. Satisfy 3rd user story
+45. Commit

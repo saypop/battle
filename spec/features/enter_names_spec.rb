@@ -8,7 +8,7 @@
 
 # So... user goes to homepage => sees a button to start fight
 # Then... user clicks start fight button => sees a form to enter players names and submit button
-# Then... user inputs player1 and player2 names and hits submit => fight starts
+# Then... user inputs player1 and player2 names and hits submit => user sees the title of the fight
 
 feature 'Enter names' do
   scenario 'submitting names' do
