@@ -1,33 +1,30 @@
 # Building a Web App
 
 ## Set-up
-1. Create directory
+1.  Create directory
 2. `$ bundle init`
-3. Add to gemfile: `gem 'rspec'` and `gem 'sinatra'`
+3.  Add to gemfile: `gem 'rspec'` and `gem 'sinatra'`
 4. `touch app.rb`
-5. In app.rb `require 'sinatra/base'`
-6. Create class `class Battle < Sinatra::Base`
-7. Finish with `run! if app_file == $0`
+5.  In app.rb `require 'sinatra/base'`
+6.  Create class `class Battle < Sinatra::Base`
+7.  Finish with `run! if app_file == $0`
 8. `touch config.ru`
 9. `require_relative "./app"` then `run Battle`
-10. `rackup config.ru`
+10.`rackup config.ru`
 11. get local host port
-12. `rspec --init`
+12.`rspec --init`
 13. Add `gem 'capybara'` to gemfile
-14. `bundle`
+14.`bundle`
 15. Add the following to spec-helper
-
-    `ENV['RACK_ENV'] = 'test'
+    ```
+    ENV['RACK_ENV'] = 'test'
 
     require File.join(File.dirname(__FILE__), '..', 'app.rb')
-
     require 'capybara'
-
     require 'capybara/rspec'
-
-    require 'rspec'`
-16. `mkdir spec/features`
-17. `touch spec/features/enter_names_spec.rb`
+    require 'rspec'```
+16.`mkdir spec/features`
+17.`touch spec/features/enter_names_spec.rb`
 18. Write first feature test
     ```ruby#
     feature 'Enter names' do
@@ -52,3 +49,9 @@
 29. Call `erb(;play)`
 30. Refactor html to include labels on forms.
 31. Commit
+32. Enable session in app
+33.`session[:player_1_name] = params[:player_1_name]` to store a value in session
+34. Write a get '/play' that renders play
+35. Extract instance variables
+36. Remove erb(:play) from post '/names' and replace it with a redirect to '/play'
+37. commit
