@@ -55,3 +55,9 @@
 35. Extract instance variables
 36. Remove erb(:play) from post '/names' and replace it with a redirect to '/play'
 37. commit
+38. Satisfy second user story
+39. Commit
+40. Create a file called web_helpers.rb in spec
+41. require it in spec helper
+42. create a method in there and use it in your specs
+43. commit
