@@ -63,3 +63,5 @@
 43. Commit
 44. Satisfy 3rd user story
 45. Commit
+46. Satisfy 4th and 5th user story
+47. Commit
