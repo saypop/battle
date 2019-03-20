@@ -17,12 +17,13 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = $game
+    @game.next_turn
     erb :play
   end
 
   get '/attack' do
     @game = $game
-    @game.attack(@game.player_2)
+    @game.attack(@game.defender)
     erb :attack
   end
 
