@@ -7,10 +7,6 @@ class Game
     @turn = 0
   end
 
-  def attack(player)
-    player.take_damage
-  end
-
   def next_turn
     @turn += 1
   end

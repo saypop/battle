@@ -6,15 +6,6 @@ describe Game do
   let(:ken) {double(:player)}
   let(:game) {Game.new(ken, ryu)}
 
-  it 'let player be attacked' do
-    expect(game).to respond_to(:attack).with(1).argument
-  end
-
-  it 'takes life away from an opponent after attacking' do
-    expect(ryu).to receive(:take_damage)
-    game.attack(ryu)
-  end
-
   it 'counts the turns' do
     expect{game.next_turn}.to change{game.turn}.by(1)
   end

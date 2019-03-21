@@ -21,9 +21,9 @@ class Battle < Sinatra::Base
     erb :play
   end
 
-  get '/attack' do
+  get '/confirmation' do
     @game = $game
-    @game.attack(@game.defender)
+    Attack.run(@game.defender)
     erb :attack
   end
 
