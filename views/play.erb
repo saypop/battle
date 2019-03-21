@@ -1,5 +1,13 @@
+<% total_attacker_hit_point = @game.attacker.life_total %>
+<% total_defender_hit_point = @game.defender.life_total %>
+
 <%= @game.attacker.name %> vs. <%= @game.defender.name%><br>
-<%= @game.defender.name %>: <%= @game.defender.hit_points %> HP / 100 HP<br>
+<br>
+You are playing as <%= @game.attacker.name %>.
+Your hitpoints: <%= @game.attacker.hit_points %> HP / <%= total_attacker_hit_point %> HP
+<br>
+<br>
+<%= @game.attacker.name %>! You are attacking <%= @game.defender.name %>: <%= @game.defender.hit_points %> HP / <%= total_defender_hit_point %> HP<br>
 <br>
 <br>
 <br>

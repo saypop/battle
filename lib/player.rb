@@ -5,9 +5,10 @@ class Player
 
   attr_reader :name, :hit_points
 
-  def initialize(name)
+  def initialize(name, life_total = DEFAULT_HIT_POINTS)
     @name = name
-    @hit_points = DEFAULT_HIT_POINTS
+    @life_total = life_total
+    @hit_points = @life_total
   end
 
   def take_damage(hit_points = DEFAULT_DAMAGE)
@@ -16,6 +17,10 @@ class Player
 
   def attack(opponent)
     opponent.take_damage
+  end
+
+  def life_total
+    @life_total
   end
 
 end
