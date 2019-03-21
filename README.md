@@ -1,6 +1,81 @@
-# Building a Web App
+# Battle! A Basic Web-App
 
-## Set-up
+## Week 3 Pairing Challenge @ Makers Academy
+
+### Design
+We were challenged to build an simple fighting game app. We worked in pairs, changing partners everyday.
+
+We were given a list of user stories, these of the user stories that this app satisfies:
+
+```
+As two Players,
+So we can play a personalised game of Battle,
+We want to Start a fight by entering our Names and seeing them
+
+As Player 1,
+So I can see how close I am to winning
+I want to see Player 2's Hit Points
+
+As Player 1,
+So I can win a game of Battle,
+I want to attack Player 2, and I want to get a confirmation
+
+As Player 1,
+So I can start to win a game of Battle,
+I want my attack to reduce Player 2's HP by 10
+
+As two Players,
+So we can continue our game of Battle,
+We want to switch turns
+
+As Player 1,
+So I can see how close I am to losing,
+I want to see my own hit points
+
+As Player 1,
+So I can lose a game of Battle,
+I want Player 2 to attack me, and I want to get a confirmation
+
+As Player 1,
+So I can start to lose a game of Battle,
+I want Player 2's attack to reduce my HP by 10
+
+As a Player,
+So I can Lose a game of Battle,
+I want to see a 'Lose' message if I reach 0HP first
+```
+
+### Learning Objectives
+- Have fun!
+- Improve every day as a developer.
+- Be able to build a web app.
+
+
+### Instructions
+- `$ git clone https://github.com/saypop/battle`
+- `$ cd battle`
+- `$ bundle`
+- `$ ruby app.rb`
+- `$ rackup config.ru`
+
+### Tests
+- `$ rspec`
+
+### Tech
+- Written in Ruby 2.5.0
+- Using the Sinatra web framework
+- Server is set up using Rackup
+- Tests are done with RSpec and Capybara
+
+### Learnings
+- I battled with Capybara at first but now have the hang of it
+- I have learned how little I know about HTML and CSS
+- I can now build a basic web app!
+
+### Acknowledgements
+Throughout the week I worked with Cosmin Mircea, Paul Martin, and Matt Thompson.
+
+### Set-up hints (for posterity)
 1.  Create directory
 2. `$ bundle init`
 3.  Add to gemfile: `gem 'rspec'` and `gem 'sinatra'`
@@ -22,46 +97,6 @@
     require File.join(File.dirname(__FILE__), '..', 'app.rb')
     require 'capybara'
     require 'capybara/rspec'
-    require 'rspec'```
-16.`mkdir spec/features`
-17.`touch spec/features/enter_names_spec.rb`
-18. Write first feature test
-    ```ruby#
-    feature 'Enter names' do
-      scenario 'submitting names' do
-        visit('/')
-        fill_in :player_1_name, with: 'Dave'
-        fill_in :player_2_name, with: 'Mittens'
-        click_button 'Submit'
-        expect(page).to have_content 'Dave vs. Mittens'
-      end
-    end```
-19. Create views folder
-20. Create index.erb file
-21. Update our get '/' to `erb(:index)`
-22. Create views directory
-23. Create an index.erb
-24. Add this `<input type="text" name="player_1_name">`
-25. Work through rspec errors
-26. Set action in for to go to /names using post method
-27. Create a `_post_ '/names'` in app
-28. Pass params to instance variables like this `@player_1_name = params[:player_1_name]`
-29. Call `erb(;play)`
-30. Refactor html to include labels on forms.
-31. Commit
-32. Enable session in app
-33.`session[:player_1_name] = params[:player_1_name]` to store a value in session
-34. Write a get '/play' that renders play
-35. Extract instance variables
-36. Remove erb(:play) from post '/names' and replace it with a redirect to '/play'
-37. Commit
-38. Satisfy second user story
-39. Commit
-40. Create a file called web_helpers.rb in spec
-41. Require it in spec helper
-42. Create a method in there and use it in your specs
-43. Commit
-44. Satisfy 3rd user story
-45. Commit
-46. Satisfy 4th and 5th user story
-47. Commit
+    require 'rspec'
+    Capybara.app = Battle
+    ```
