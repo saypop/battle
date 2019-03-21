@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/attack.rb'
 
 class Battle < Sinatra::Base
 
@@ -17,14 +18,18 @@ class Battle < Sinatra::Base
 
   get '/play' do
     @game = $game
-    @game.next_turn
-    erb :play
+    if @game.over?
+      erb :game_over
+    else
+      @game.next_turn
+      erb :play
+    end
   end
 
   get '/confirmation' do
     @game = $game
     Attack.run(@game.defender)
-    erb :attack
+    erb :confirmation
   end
 
   run! if app_file == $0

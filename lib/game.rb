@@ -27,4 +27,8 @@ class Game
     end
   end
 
+  def over?
+    defender.hit_points == 0? true:false
+  end
+
 end
