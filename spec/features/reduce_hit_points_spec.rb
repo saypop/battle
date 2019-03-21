@@ -18,6 +18,6 @@ feature 'Reduce opponents hitpoints' do
   scenario 'after attacking' do
     sign_in_and_play
     click_button('Attack')
-    expect(page).to have_content 'Goliath: 90 HP / 100 HP'
+    expect(page).to have_content 'Their hitpoints: 90 HP / 100 HP'
   end
 end

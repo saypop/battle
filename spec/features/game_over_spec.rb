@@ -16,8 +16,8 @@
 # Then... when a player's life total reaches 0 => they see a game over message
 
 
-feature 'See your hit points' do
-  scenario 'on the confirmation that your were attacked page' do
+feature 'See a game over message' do
+  scenario 'when your hitpoints reach 0' do
     sign_in_and_play
     attack_19_times
     expect(page).to have_content 'Game over!'

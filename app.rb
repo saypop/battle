@@ -12,24 +12,29 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    $game = Game.new(Player.new(params[:player_1_name]), Player.new(params[:player_2_name]))
+    @game = Game.create(Player.new(params[:player_1_name]), Player.new(params[:player_2_name]))
     redirect '/play'
   end
 
   get '/play' do
-    @game = $game
+    @game = Game.instance
+    @game.next_turn
+    erb :play
+  end
+
+  get '/turn_end' do
+    @game = Game.instance
+    Attack.run(@game.defender)
+    erb :turn_end
+  end
+
+  get '/turn_start' do
+    @game = Game.instance
     if @game.over?
       erb :game_over
     else
-      @game.next_turn
-      erb :play
+      erb :turn_start
     end
-  end
-
-  get '/confirmation' do
-    @game = $game
-    Attack.run(@game.defender)
-    erb :confirmation
   end
 
   run! if app_file == $0

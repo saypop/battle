@@ -6,8 +6,11 @@ def sign_in_and_play
 end
 
 def attack_19_times
-  19.times do
+  18.times do
     click_button('Attack')
     click_button('OK')
+    click_button('OK')
   end
+  click_button('Attack')
+  click_button('OK')
 end
